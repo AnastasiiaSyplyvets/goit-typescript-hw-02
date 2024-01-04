@@ -3,13 +3,13 @@
   Доповніть цю функцію, використовуючи generics, щоб вона повертала правильний тип.
 */
 
-function getPromise<string, number>() {
+function getPromise<T>(data: T[]): Promise<T[]> {
   return new Promise((resolve) => {
-    resolve(["Text", 50]);
+    resolve(data);
   });
 }
 
-getPromise().then((data) => {
+getPromise(["Text", 50]).then((data) => {
   console.log(data);
 });
 
